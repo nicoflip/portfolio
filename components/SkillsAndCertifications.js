@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Award, X, ChevronLeft, ChevronRight, ShieldCheck } from 'lucide-react';
+import { Award, X, ChevronLeft, ChevronRight, ShieldCheck, Terminal, Server, Shield, Database, Layout } from 'lucide-react';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -13,6 +13,28 @@ const staggerContainer = {
   hidden: { opacity: 0 },
   visible: { opacity: 1, transition: { staggerChildren: 0.15 } }
 };
+
+const SkillCard = ({ title, icon: Icon, level }) => (
+  <motion.div 
+    variants={fadeInUp}
+    whileHover={{ y: -5 }}
+    className="glass-card p-6 rounded-2xl flex flex-col items-center justify-center text-center group"
+  >
+    <div className="w-16 h-16 rounded-full bg-green-500/10 border border-green-500/20 flex items-center justify-center mb-4 group-hover:bg-green-500/20 group-hover:border-green-400 group-hover:shadow-[0_0_20px_rgba(34,197,94,0.3)] transition-all duration-500">
+      <Icon className="w-8 h-8 text-green-400" />
+    </div>
+    <h4 className="text-white font-medium mb-2">{title}</h4>
+    <div className="w-full bg-gray-900/50 rounded-full h-1.5 mt-2 overflow-hidden">
+      <motion.div
+        initial={{ width: 0 }}
+        whileInView={{ width: `${level}%` }}
+        viewport={{ once: true }}
+        transition={{ duration: 1.5, delay: 0.5, ease: "easeOut" }}
+        className="h-full bg-gradient-to-r from-green-600 to-green-400 rounded-full"
+      />
+    </div>
+  </motion.div>
+);
 
 const certifications = [
   {
@@ -35,7 +57,7 @@ const certifications = [
   },
 ];
 
-export default function Certifications() {
+export default function SkillsAndCertifications() {
   const [selectedCert, setSelectedCert] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -74,63 +96,91 @@ export default function Certifications() {
 
   return (
     <section className="py-12 px-4 relative z-10">
-      <div className="max-w-6xl mx-auto">
-        <motion.div
-           variants={fadeInUp}
-           initial="hidden"
-           whileInView="visible"
-           viewport={{ once: true, margin: "-100px" }}
-           className="text-center mb-16"
-        >
-          <div className="inline-flex items-center justify-center p-4 glass rounded-full mb-6 relative">
-            <div className="absolute inset-0 bg-green-500/20 blur-xl rounded-full" />
-            <Award className="w-8 h-8 text-green-400 relative z-10" />
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight mb-4">
-            Mes <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-cyan-400">Certifications</span>
-          </h2>
-        </motion.div>
-        
+      <div className="max-w-6xl mx-auto space-y-24">
+        {/* SKILLS SECTION */}
         <motion.div
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid md:grid-cols-3 gap-6"
         >
-          {certifications.map((cert, index) => (
-            <motion.div
-              key={index}
-              variants={fadeInUp}
-              whileHover={{ y: -10 }}
-              className="glass-card rounded-3xl p-8 text-center group cursor-pointer relative overflow-hidden"
-              onClick={() => openCertification(cert)}
-            >
-              <div className="absolute inset-0 bg-green-500/0 group-hover:bg-green-500/5 transition-colors duration-500" />
-              
-              <div className="w-16 h-16 mx-auto bg-green-500/10 border border-green-500/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:border-green-400 transition-all duration-300">
-                <ShieldCheck className="w-8 h-8 text-green-400" />
-              </div>
-              
-              <h3 className="text-xl font-bold text-white mb-2 group-hover:text-green-300 transition-colors">
-                {cert.name}
-              </h3>
-              <p className="text-gray-400 text-sm mb-4 font-light">{cert.authority}</p>
-              
-              <div className="inline-flex items-center text-xs font-mono text-green-400 bg-green-500/10 px-3 py-1 rounded-full border border-green-500/20 mb-4">
-                {cert.date}
-              </div>
-              
-              <p className="text-xs text-green-500/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
-                <span>Cliquez pour voir</span>
-                {cert.images.length > 1 && (
-                  <span className="bg-white/10 text-white rounded-full px-2 py-0.5">
-                    {cert.images.length}
-                  </span>
-                )}
-              </p>
-            </motion.div>
-          ))}
+          <div className="flex flex-col items-center mb-12">
+            <h3 className="text-3xl md:text-4xl font-bold text-white text-center tracking-tight mb-4">
+              Mes <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-green-400">Compétences</span>
+            </h3>
+            <p className="text-gray-400 font-light text-center max-w-2xl">
+              Une stack technique solide pour garantir la fiabilité et la sécurité de vos infrastructures.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+            <SkillCard title="Cybersécurité" icon={Shield} level={90} />
+            <SkillCard title="Réseaux" icon={Server} level={85} />
+            <SkillCard title="Admin Sys" icon={Terminal} level={80} />
+            <SkillCard title="Virtualisation" icon={Database} level={80} />
+            <SkillCard title="Service Client" icon={Layout} level={95} />
+          </div>
+        </motion.div>
+
+        {/* CERTIFICATIONS SECTION */}
+        <motion.div
+           variants={fadeInUp}
+           initial="hidden"
+           whileInView="visible"
+           viewport={{ once: true, margin: "-100px" }}
+           className="w-full"
+        >
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center justify-center p-4 glass rounded-full mb-6 relative">
+              <div className="absolute inset-0 bg-green-500/20 blur-xl rounded-full" />
+              <Award className="w-8 h-8 text-green-400 relative z-10" />
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight mb-4">
+              Mes <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-cyan-400">Certifications</span>
+            </h2>
+          </div>
+          
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            className="grid md:grid-cols-3 gap-6"
+          >
+            {certifications.map((cert, index) => (
+              <motion.div
+                key={index}
+                variants={fadeInUp}
+                whileHover={{ y: -10 }}
+                className="glass-card rounded-3xl p-8 text-center group cursor-pointer relative overflow-hidden"
+                onClick={() => openCertification(cert)}
+              >
+                <div className="absolute inset-0 bg-green-500/0 group-hover:bg-green-500/5 transition-colors duration-500" />
+                
+                <div className="w-16 h-16 mx-auto bg-green-500/10 border border-green-500/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:border-green-400 transition-all duration-300">
+                  <ShieldCheck className="w-8 h-8 text-green-400" />
+                </div>
+                
+                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-green-300 transition-colors">
+                  {cert.name}
+                </h3>
+                <p className="text-gray-400 text-sm mb-4 font-light">{cert.authority}</p>
+                
+                <div className="inline-flex items-center text-xs font-mono text-green-400 bg-green-500/10 px-3 py-1 rounded-full border border-green-500/20 mb-4">
+                  {cert.date}
+                </div>
+                
+                <p className="text-xs text-green-500/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
+                  <span>Cliquez pour voir</span>
+                  {cert.images.length > 1 && (
+                    <span className="bg-white/10 text-white rounded-full px-2 py-0.5">
+                      {cert.images.length}
+                    </span>
+                  )}
+                </p>
+              </motion.div>
+            ))}
+          </motion.div>
         </motion.div>
       </div>
 

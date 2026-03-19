@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Terminal, Server, Shield, Database, Layout } from 'lucide-react';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -16,28 +15,6 @@ const staggerContainer = {
     transition: { staggerChildren: 0.15, delayChildren: 0.2 }
   }
 };
-
-const SkillCard = ({ title, icon: Icon, level }) => (
-  <motion.div 
-    variants={fadeInUp}
-    whileHover={{ y: -5 }}
-    className="glass-card p-6 rounded-2xl flex flex-col items-center justify-center text-center group"
-  >
-    <div className="w-16 h-16 rounded-full bg-green-500/10 border border-green-500/20 flex items-center justify-center mb-4 group-hover:bg-green-500/20 group-hover:border-green-400 group-hover:shadow-[0_0_20px_rgba(34,197,94,0.3)] transition-all duration-500">
-      <Icon className="w-8 h-8 text-green-400" />
-    </div>
-    <h4 className="text-white font-medium mb-2">{title}</h4>
-    <div className="w-full bg-gray-900/50 rounded-full h-1.5 mt-2 overflow-hidden">
-      <motion.div
-        initial={{ width: 0 }}
-        whileInView={{ width: `${level}%` }}
-        viewport={{ once: true }}
-        transition={{ duration: 1.5, delay: 0.5, ease: "easeOut" }}
-        className="h-full bg-gradient-to-r from-green-600 to-green-400 rounded-full"
-      />
-    </div>
-  </motion.div>
-);
 
 export default function About() {
   return (
@@ -106,46 +83,6 @@ export default function About() {
               Expertise technique en <span className="text-white font-medium">Infrastructure</span> & <span className="text-white font-medium">Sécurité</span>.
             </p>
           </motion.div>
-
-          {/* Performances Header */}
-          <div className="lg:col-span-12 mt-16 mb-2 flex flex-col items-center">
-            <div className="w-px h-16 bg-gradient-to-b from-transparent to-green-500/50 mb-6" />
-            <h3 className="text-3xl md:text-4xl font-bold text-white text-center tracking-tight mb-4">
-              Performances & <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-green-400">Compétences</span>
-            </h3>
-            <p className="text-gray-400 font-light text-center max-w-2xl">
-              Des métriques mesurables et une stack technique solide pour garantir la fiabilité et la sécurité de vos infrastructures.
-            </p>
-          </div>
-
-          {/* Performance Metrics */}
-          <div className="lg:col-span-12 grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-            <motion.div variants={fadeInUp} whileHover={{ y: -8 }} className="glass-card p-10 text-center rounded-[2rem] border-b-4 border-green-400/50 bg-black/40 hover:bg-black/60 transition-colors group relative overflow-hidden">
-              <div className="absolute inset-0 bg-green-500/0 group-hover:bg-green-500/5 transition-colors duration-500" />
-              <h4 className="text-6xl md:text-7xl mb-4 font-mono font-bold text-transparent bg-clip-text bg-gradient-to-b from-white via-green-100 to-green-500 drop-shadow-[0_0_15px_rgba(34,197,94,0.3)] group-hover:scale-110 transition-transform duration-500">100<span className="text-4xl text-green-400">%</span></h4>
-              <p className="text-gray-400 text-sm tracking-widest uppercase font-semibold">Disponibilité Systèmes</p>
-            </motion.div>
-            
-            <motion.div variants={fadeInUp} whileHover={{ y: -8 }} className="glass-card p-10 text-center rounded-[2rem] border-b-4 border-cyan-400/50 bg-black/40 hover:bg-black/60 transition-colors group relative overflow-hidden">
-              <div className="absolute inset-0 bg-cyan-500/0 group-hover:bg-cyan-500/5 transition-colors duration-500" />
-              <h4 className="text-6xl md:text-7xl mb-4 font-mono font-bold text-transparent bg-clip-text bg-gradient-to-b from-white via-cyan-100 to-cyan-500 drop-shadow-[0_0_15px_rgba(6,182,212,0.3)] group-hover:scale-110 transition-transform duration-500">5<span className="text-4xl text-cyan-400">+</span></h4>
-              <p className="text-gray-400 text-sm tracking-widest uppercase font-semibold">Projets d'Infrastructure</p>
-            </motion.div>
-            
-            <motion.div variants={fadeInUp} whileHover={{ y: -8 }} className="glass-card p-10 text-center rounded-[2rem] border-b-4 border-green-400/50 bg-black/40 hover:bg-black/60 transition-colors group relative overflow-hidden">
-              <div className="absolute inset-0 bg-green-500/0 group-hover:bg-green-500/5 transition-colors duration-500" />
-              <h4 className="text-6xl md:text-7xl mb-4 font-mono font-bold text-transparent bg-clip-text bg-gradient-to-b from-white via-green-100 to-green-500 drop-shadow-[0_0_15px_rgba(34,197,94,0.3)] group-hover:scale-110 transition-transform duration-500">50<span className="text-4xl text-green-400">+</span></h4>
-              <p className="text-gray-400 text-sm tracking-widest uppercase font-semibold">Tickets Résolus</p>
-            </motion.div>
-          </div>
-
-          <div className="lg:col-span-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-            <SkillCard title="Cybersécurité" icon={Shield} level={90} />
-            <SkillCard title="Réseaux" icon={Server} level={85} />
-            <SkillCard title="Admin Sys" icon={Terminal} level={80} />
-            <SkillCard title="Virtualisation" icon={Database} level={80} />
-            <SkillCard title="Service Client" icon={Layout} level={95} />
-          </div>
 
         </motion.div>
       </div>

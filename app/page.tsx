@@ -3,7 +3,7 @@
 import Scene from '@/components/Scene';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
-import Certifications from '@/components/Certifications';
+import SkillsAndCertifications from '@/components/SkillsAndCertifications';
 import Parcours from '@/components/Parcours';
 import Projects from '@/components/Projects';
 import Veille from '@/components/Veille';
@@ -21,7 +21,7 @@ export default function Home() {
       <div className="flex w-full justify-center px-6 py-8 relative z-10">
         <div className="max-w-5xl w-full flex flex-col gap-y-8">
           <About />
-          <Certifications />
+          <SkillsAndCertifications />
           <Parcours />
           <Projects />
           <Veille />
