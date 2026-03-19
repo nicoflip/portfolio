@@ -41,7 +41,7 @@ const SkillCard = ({ title, icon: Icon, level }) => (
 
 export default function About() {
   return (
-    <section className="py-24 px-4 relative z-10">
+    <section className="py-12 px-4 relative z-10">
       <div className="max-w-6xl mx-auto">
         <motion.div
           variants={staggerContainer}

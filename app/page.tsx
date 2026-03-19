@@ -18,8 +18,8 @@ export default function Home() {
       
       <Hero />
       <div className="w-full h-24 bg-gradient-to-b from-black/20 via-black/10 to-transparent" />
-      <div className="flex w-full justify-center px-6 py-16 relative z-10">
-        <div className="max-w-5xl w-full flex flex-col gap-y-16">
+      <div className="flex w-full justify-center px-6 py-8 relative z-10">
+        <div className="max-w-5xl w-full flex flex-col gap-y-8">
           <About />
           <Certifications />
           <Parcours />

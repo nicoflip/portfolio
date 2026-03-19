@@ -51,7 +51,7 @@ export default function EpreuveE5() {
   ];
 
   return (
-    <section className="py-24 px-4 relative z-10 overflow-hidden">
+    <section className="py-12 px-4 relative z-10 overflow-hidden">
       <div className="absolute inset-0 bg-green-500/5 blur-[120px] rounded-full pointer-events-none -z-10 translate-y-1/2" />
       
       <div className="max-w-[95vw] mx-auto xl:max-w-7xl">

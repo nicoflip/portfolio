@@ -160,7 +160,7 @@ export default function Veille() {
   const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + veilleArticles.length) % veilleArticles.length);
 
   return (
-    <section className="py-24 px-4 relative z-10">
+    <section className="py-12 px-4 relative z-10">
       <div className="max-w-6xl mx-auto">
         <motion.div
           variants={fadeInUp}

@@ -16,7 +16,7 @@ const staggerContainer = {
 
 export default function Contacts() {
   return (
-    <section className="py-24 px-4 relative z-10 overflow-hidden">
+    <section className="py-12 px-4 relative z-10 overflow-hidden">
       {/* Background glowing shapes */}
       <div className="absolute top-1/2 left-1/2 w-[600px] h-[600px] bg-green-600/10 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 -z-10 pointer-events-none" />
 
