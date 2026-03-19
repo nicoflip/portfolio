@@ -79,7 +79,7 @@ export default function About() {
                   </div>
                   <div>
                     <strong className="text-white text-lg block mb-1">Recherche d'Alternance</strong>
-                    Je suis activement à l'écoute pour ma <strong>3ème année Administrateur Système et Réseaux DevOps</strong> avec l'école <strong>ENI</strong>.
+                    Je suis activement en recherche d'alternance pour ma <strong>3ème année Administrateur Système et Réseaux DevOps</strong> avec l'école <strong>ENI</strong> sur Rennes et ses alentours.
                   </div>
                 </div>
               </div>
