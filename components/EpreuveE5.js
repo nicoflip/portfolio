@@ -83,12 +83,10 @@ export default function EpreuveE5() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-gray-300 font-light">
               <div>
                 <p className="font-semibold text-green-400 mb-2 tracking-wide uppercase">BTS SIO • Option SISR</p>
-                <p className="mb-2">N° candidat: <span className="font-mono text-green-400 bg-green-500/10 px-2 py-0.5 rounded">XXXXXXX</span></p>
                 <p>Année de session: <span className="font-medium text-white">2026</span></p>
               </div>
               <div className="md:text-right">
-                <p className="mb-2">Étudiant: <span className="font-semibold text-white">Dimitri Linqué</span></p>
-                <p className="mb-2">Centre: <span className="text-white">Lycée Léonard de Vinci</span></p>
+                <p>Étudiant: <span className="font-semibold text-white">Dimitri Linqué</span></p>
               </div>
             </div>
           </motion.div>
@@ -138,10 +136,14 @@ export default function EpreuveE5() {
             </div>
             
             <div className="mt-8 pt-6 border-t border-green-500/20 text-center flex flex-col sm:flex-row items-center justify-center gap-6">
-              <button className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-green-600 to-green-400 text-black font-semibold rounded-2xl hover:brightness-110 transition-all duration-300 shadow-[0_0_20px_rgba(34,197,94,0.3)]">
+              <a 
+                href="/tableau-e5.xlsx"
+                download="tableau-e5.xlsx"
+                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-green-600 to-green-400 text-black font-semibold rounded-2xl hover:brightness-110 transition-all duration-300 shadow-[0_0_20px_rgba(34,197,94,0.3)]"
+              >
                 <Download className="w-5 h-5 mr-3" />
-                Tableau complet (PDF)
-              </button>
+                Tableau complet (Excel)
+              </a>
             </div>
           </motion.div>
         </motion.div>

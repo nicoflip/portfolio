@@ -74,8 +74,8 @@ export default function Contacts() {
           
           <motion.div variants={fadeInUp} className="max-w-xl mx-auto border-t border-white/10 pt-10">
             <a 
-              href="/cv.pdf" 
-              download="CV_Dimitri_Linque.pdf"
+              href="/cv_dimitri-linque.pdf" 
+              download="cv_dimitri-linque.pdf"
               className="inline-flex w-full sm:w-auto items-center justify-center px-10 py-5 bg-gradient-to-r from-green-600 to-cyan-500 text-black font-bold text-lg rounded-2xl hover:brightness-110 transition-all duration-300 shadow-[0_4px_30px_rgba(34,197,94,0.3)] group"
             >
               <Download className="w-6 h-6 mr-3 group-hover:-translate-y-1 transition-transform" />
