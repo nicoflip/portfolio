@@ -28,20 +28,22 @@ export const projectData = [
   },
   { 
     id: 2, 
-    title: "Déploiement GLPI", 
-    desc: "Installation GLPI et mise en place d'un inventaire avec GLPI-Agent.", 
-    icon: Database, 
-    tech: ["Linux", "GLPI", "Réseau"],
+    title: "Site de location et dépannage de flippers et machines d'arcades", 
+    desc: "Développement et déploiement d'un site vitrine pour la location et le dépannage de flippers et bornes d'arcades.", 
+    icon: Monitor, 
+    tech: ["Next.js", "React", "Vercel", "GitHub"],
+    link: "https://nicoflip2.dimitri-linque.fr",
+    isExternal: true,
     accentColor: "from-blue-500 to-cyan-400",
     accentGlow: "bg-blue-500/20",
     context: {
-      description: "Mise en place d'une solution complète de gestion de parc informatique open-source.",
+      description: "Création d'une plateforme moderne permettant de présenter les services de location et de réparation de machines de jeux d'arcade.",
       features: [
-        { title: "Inventaire Automatisé", description: "Remontée automatique des configurations matérielles." }
+        { title: "Développement Web", description: "Création de l'interface et de l'expérience utilisateur avec React et Next.js." }
       ]
     },
     technicalDetails: [
-      { icon: Database, title: "Déploiement", description: "Installation sous environnement Linux avec base de données MariaDB." }
+      { icon: Code, title: "Technologies Frontend & Hébergement", description: "Architecture basée sur Next.js, code source géré via GitHub et déploiement continu sur Vercel." }
     ]
   },
   { 
