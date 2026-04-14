@@ -7,8 +7,29 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const jetbrainsMono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mono' });
 
 export const metadata = {
-  title: 'Dimitri Linqué - Portfolio Cyber',
-  description: 'Portfolio cyber-minimaliste de Dimitri Linqué, BTS SIO SISR et passionné de cybersécurité.',
+  title: 'Portfolio DevOps & Cybersécurité | Dimitri Linqué',
+  description: 'Portfolio professionnel de Dimitri Linqué, passionné par le DevOps, l\'administration système, réseau et la cybersécurité. Découvrez mes compétences et projets.',
+  keywords: ['Dimitri Linqué', 'Portfolio', 'DevOps', 'Cybersécurité', 'SysAdmin', 'Cloud', 'Infrastructure', 'Réseau'],
+  authors: [{ name: 'Dimitri Linqué' }],
+  creator: 'Dimitri Linqué',
+  openGraph: {
+    type: 'website',
+    locale: 'fr_FR',
+    title: 'Portfolio DevOps & Cybersécurité | Dimitri Linqué',
+    description: 'Découvrez le portfolio professionnel de Dimitri Linqué : projets DevOps, Cybersécurité et infrastructures IT.',
+    siteName: 'Dimitri Linqué Portfolio'
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
+  verification: {
+    google: 'METTRE_VOTRE_CODE_GOOGLE_ICI',
+  },
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
