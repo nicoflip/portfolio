@@ -59,7 +59,15 @@ export default function Projects() {
                 whileHover={{ y: -10 }}
                 className="glass-card rounded-3xl group relative overflow-hidden"
               >
-                <CardWrapper {...wrapperProps} className="block p-8 h-full w-full relative z-10">
+                <CardWrapper 
+                  {...wrapperProps} 
+                  className="block p-8 h-full w-full relative z-10"
+                  onClick={() => {
+                    if (project.id === 1) {
+                      alert("Identifiants de connexion au site roadmap :\nLogin : examinateur\nMdp : E6-2026");
+                    }
+                  }}
+                >
                   {/* Background glow effect */}
                   <div className={`absolute top-0 right-0 w-32 h-32 ${project.accentGlow || 'bg-green-500/10'} rounded-full blur-3xl -mr-10 -mt-10 transition-colors`} />
                   
