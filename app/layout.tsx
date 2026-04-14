@@ -28,7 +28,7 @@ export const metadata = {
     },
   },
   verification: {
-    google: 'METTRE_VOTRE_CODE_GOOGLE_ICI',
+    google: 'SKfmHWqJW3aSmuk_nlDd8vtPlncQkb5DDjrXCNaGCJ4',
   },
 };
 
