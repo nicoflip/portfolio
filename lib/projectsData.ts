@@ -48,20 +48,22 @@ export const projectData = [
   },
   { 
     id: 3, 
-    title: "Masterisation M365", 
-    desc: "Déploiement du service M365 et masterisation de postes clients.", 
-    icon: Terminal, 
-    tech: ["M365", "Scripting"],
+    title: "MyChores - Gestion des tâches", 
+    desc: "Application web complète de gestion des tâches ménagères et corvées à la maison.", 
+    icon: Database, 
+    tech: ["Next.js", "React", "Supabase", "Vercel"],
+    link: "https://mychores.dimitri-linque.fr/",
+    isExternal: true,
     accentColor: "from-purple-500 to-indigo-400",
     accentGlow: "bg-purple-500/20",
     context: {
-      description: "Industrialisation du déploiement de postes de travail avec intégration cloud.",
+      description: "Création d'une application centralisée permettant d'organiser, d'assigner et de suivre les corvées au sein du foyer.",
       features: [
-        { title: "Gain de temps", description: "Automatisation de l'installation des outils bureautiques." }
+        { title: "Organisation Simplifiée", description: "Suivi interactif et en temps réel des tâches effectuées." }
       ]
     },
     technicalDetails: [
-      { icon: Terminal, title: "Scripting", description: "Scripts PowerShell pour la configuration initiale." }
+      { icon: Code, title: "Stack Moderne", description: "Interface utilisateur développée en React/Next.js, architecture backend gérée par Supabase, avec un déploiement continu assuré par Vercel." }
     ]
   },
   { 
