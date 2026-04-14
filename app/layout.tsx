@@ -33,8 +33,35 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Dimitri Linqué',
+    url: 'https://dimitri-linque.fr', // Mettez à jour si différent
+    jobTitle: 'Technicien Système, Réseau, DevOps et Cybersécurité',
+    knowsAbout: [
+      'DevOps', 
+      'Cybersécurité', 
+      'Administration Système', 
+      'Réseaux Informatiques', 
+      'Développement Web', 
+      'React', 
+      'Next.js'
+    ],
+    alumniOf: {
+      '@type': 'Organization',
+      name: 'BTS SIO SISR'
+    }
+  };
+
   return (
     <html lang="fr" className={`${inter.variable} ${jetbrainsMono.variable}`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="bg-black text-white font-sans antialiased overflow-x-hidden">
         <SmoothScrolling>
           {children}
