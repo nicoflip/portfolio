@@ -1,10 +1,11 @@
 "use client";
 
-import React from 'react';
+import React, { useState } from 'react';
 import { projectData } from '../../../lib/projectsData';
 import Link from 'next/link';
 import { ExternalLink, ArrowLeft } from 'lucide-react';
 import { motion, Variants } from 'framer-motion';
+import CredentialsModal from '../../../components/CredentialsModal';
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -20,6 +21,7 @@ const staggerContainer: Variants = {
 };
 
 export default function ProjectPage({ params }: { params: { id: string } }) {
+  const [modalLink, setModalLink] = useState<string | null>(null);
   const projectId = parseInt(params.id, 10);
   const project = projectData.find(p => p.id === projectId);
 
@@ -82,9 +84,10 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="flex items-center gap-2 px-6 py-3 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-white font-medium transition-all hover:scale-105"
-                  onClick={() => {
+                  onClick={(e) => {
                     if (project.id === 1) {
-                      alert("Identifiants de connexion au site roadmap :\nLogin : examinateur\nMdp : E6-2026");
+                      e.preventDefault();
+                      setModalLink(project.link);
                     }
                   }}
                 >
@@ -187,6 +190,7 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
           </motion.section>
         )}
       </div>
+      <CredentialsModal isOpen={!!modalLink} onClose={() => setModalLink(null)} link={modalLink || ""} />
     </main>
   );
 }

@@ -1,8 +1,9 @@
 "use client";
 
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Code, Terminal, Database, Server, ExternalLink } from 'lucide-react';
+import CredentialsModal from './CredentialsModal';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 50 },
@@ -21,6 +22,8 @@ import Link from 'next/link';
 import { projectData } from '../lib/projectsData';
 
 export default function Projects() {
+  const [modalLink, setModalLink] = useState(null);
+
   return (
     <section className="py-12 px-4 relative z-10">
       <div className="max-w-6xl mx-auto">
@@ -62,9 +65,10 @@ export default function Projects() {
                 <CardWrapper 
                   {...wrapperProps} 
                   className="block p-8 h-full w-full relative z-10"
-                  onClick={() => {
+                  onClick={(e) => {
                     if (project.id === 1) {
-                      alert("Identifiants de connexion au site roadmap :\nLogin : examinateur\nMdp : E6-2026");
+                      e.preventDefault();
+                      setModalLink(project.link);
                     }
                   }}
                 >
@@ -100,6 +104,7 @@ export default function Projects() {
           })}
         </motion.div>
       </div>
+      <CredentialsModal isOpen={!!modalLink} onClose={() => setModalLink(null)} link={modalLink} />
     </section>
   );
 }
