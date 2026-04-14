@@ -96,33 +96,8 @@ export default function SkillsAndCertifications() {
 
   return (
     <section className="py-12 px-4 relative z-10">
-      <div className="max-w-6xl mx-auto space-y-24">
-        {/* SKILLS SECTION */}
-        <motion.div
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-        >
-          <div className="flex flex-col items-center mb-12">
-            <h3 className="text-3xl md:text-4xl font-bold text-white text-center tracking-tight mb-4">
-              Mes <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-green-400">Compétences</span>
-            </h3>
-            <p className="text-gray-400 font-light text-center max-w-2xl">
-              Une stack technique solide pour garantir la fiabilité et la sécurité de vos infrastructures.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-            <SkillCard title="Cybersécurité" icon={Shield} level={90} />
-            <SkillCard title="Réseaux" icon={Server} level={85} />
-            <SkillCard title="Admin Sys" icon={Terminal} level={80} />
-            <SkillCard title="Virtualisation" icon={Database} level={80} />
-            <SkillCard title="Service Client" icon={Layout} level={95} />
-          </div>
-        </motion.div>
-
-        {/* CERTIFICATIONS SECTION */}
+      <div className="max-w-6xl mx-auto">
+        {/* MERGED SKILLS AND CERTIFICATIONS SECTION */}
         <motion.div
            variants={fadeInUp}
            initial="hidden"
@@ -136,8 +111,19 @@ export default function SkillsAndCertifications() {
               <Award className="w-8 h-8 text-green-400 relative z-10" />
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight mb-4">
-              Mes <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-cyan-400">Certifications</span>
+              Compétences & <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-cyan-400">Certifications</span>
             </h2>
+            <p className="text-gray-400 font-light text-center max-w-2xl mx-auto">
+              Une stack technique solide pour garantir la fiabilité et la sécurité de vos infrastructures, validée par des certifications reconnues.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-16">
+            <SkillCard title="Cybersécurité" icon={Shield} level={90} />
+            <SkillCard title="Réseaux" icon={Server} level={85} />
+            <SkillCard title="Admin Sys" icon={Terminal} level={80} />
+            <SkillCard title="Virtualisation" icon={Database} level={80} />
+            <SkillCard title="Service Client" icon={Layout} level={95} />
           </div>
           
           <motion.div

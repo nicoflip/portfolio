@@ -66,22 +66,4 @@ export const projectData = [
       { icon: Code, title: "Stack Moderne", description: "Interface utilisateur développée en React/Next.js, architecture backend gérée par Supabase, avec un déploiement continu assuré par Vercel." }
     ]
   },
-  { 
-    id: 4, 
-    title: "Serveur Sécurisé", 
-    desc: "Installation serveur SSH Debian et Windows avec clés publiques.", 
-    icon: Code, 
-    tech: ["Debian", "SSH", "Sécurité"],
-    accentColor: "from-red-500 to-rose-400",
-    accentGlow: "bg-red-500/20",
-    context: {
-      description: "Renforcement de l'accès distant aux serveurs d'administration.",
-      features: [
-        { title: "Authentification forte", description: "Mise en place de bi-clés asymétriques." }
-      ]
-    },
-    technicalDetails: [
-      { icon: Lock, title: "Cryptographie", description: "Configuration OpenSSH sécurisée avec désactivation des mots de passe." }
-    ]
-  }
 ];
