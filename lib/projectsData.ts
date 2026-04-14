@@ -11,7 +11,7 @@ export const projectData = [
     isExternal: true,
     accentColor: "from-green-500 to-emerald-400",
     accentGlow: "bg-green-500/20",
-    heroMockup: "/placeholder.png", // TODO: Replace with real mockup
+    heroMockup: "/placeholder.webp", // TODO: Replace with real mockup
     context: {
       description: "Conception et déploiement d'une infrastructure réseau complète, hautement sécurisée et résiliente pour un Centre Hospitalier Universitaire (CHU) fictif. Ce projet d'envergure, mené sur 22 semaines en équipe de trois, illustre notre capacité à concevoir une architecture d'entreprise répondant à des contraintes de sécurité strictes dans un milieu médical.",
       features: [

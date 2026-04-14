@@ -41,19 +41,19 @@ const certifications = [
     name: "Cisco CCNA",
     authority: "Cisco",
     date: "2025",
-    images: ["ccna-module-1.jpg", "ccna-module-2.jpg", "ccna-module-3.jpg", "ccna-module-4.jpg"],
+    images: ["ccna-module-1.webp", "ccna-module-2.webp", "ccna-module-3.webp", "ccna-module-4.webp"],
   },
   {
     name: "MOOC de l'ANSSI (SecNumacadémie)",
     authority: "ANSSI",
     date: "2024",
-    images: ["secnumacademie.jpg"],
+    images: ["secnumacademie.webp"],
   },
   {
     name: "Certification RGPD",
     authority: "CNIL",
     date: "2024",
-    images: ["rgpd-1.jpg", "rgpd-2.jpg", "rgpd-3.jpg", "rgpd-4.jpg", "rgpd-5.jpg"],
+    images: ["rgpd-1.webp", "rgpd-2.webp", "rgpd-3.webp", "rgpd-4.webp", "rgpd-5.webp"],
   },
 ];
 
