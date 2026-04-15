@@ -14,25 +14,21 @@ const staggerContainer = {
   visible: { opacity: 1, transition: { staggerChildren: 0.15 } }
 };
 
-const SkillCard = ({ title, icon: Icon, level }) => (
+const SkillCard = ({ title, icon: Icon }) => (
   <motion.div 
     variants={fadeInUp}
-    whileHover={{ y: -5 }}
-    className="glass-card p-6 rounded-2xl flex flex-col items-center justify-center text-center group"
+    className="p-6 rounded-2xl flex flex-col items-center justify-center text-center"
+    style={{
+      background: 'linear-gradient(135deg, rgba(20, 20, 20, 0.8) 0%, rgba(10, 10, 10, 0.6) 100%)',
+      backdropFilter: 'blur(16px)',
+      border: '1px solid rgba(34, 197, 94, 0.15)',
+      boxShadow: '0 4px 30px rgba(0, 0, 0, 0.5)'
+    }}
   >
-    <div className="w-16 h-16 rounded-full bg-green-500/10 border border-green-500/20 flex items-center justify-center mb-4 group-hover:bg-green-500/20 group-hover:border-green-400 group-hover:shadow-[0_0_20px_rgba(34,197,94,0.3)] transition-all duration-500">
+    <div className="w-16 h-16 rounded-full bg-green-500/10 border border-green-500/20 flex items-center justify-center mb-4">
       <Icon className="w-8 h-8 text-green-400" />
     </div>
-    <h4 className="text-white font-medium mb-2">{title}</h4>
-    <div className="w-full bg-gray-900/50 rounded-full h-1.5 mt-2 overflow-hidden">
-      <motion.div
-        initial={{ width: 0 }}
-        whileInView={{ width: `${level}%` }}
-        viewport={{ once: true }}
-        transition={{ duration: 1.5, delay: 0.5, ease: "easeOut" }}
-        className="h-full bg-gradient-to-r from-green-600 to-green-400 rounded-full"
-      />
-    </div>
+    <h4 className="text-white font-medium">{title}</h4>
   </motion.div>
 );
 
@@ -119,11 +115,11 @@ export default function SkillsAndCertifications() {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-16">
-            <SkillCard title="Cybersécurité" icon={Shield} level={90} />
-            <SkillCard title="Réseaux" icon={Server} level={85} />
-            <SkillCard title="Admin Sys" icon={Terminal} level={80} />
-            <SkillCard title="Virtualisation" icon={Database} level={80} />
-            <SkillCard title="Service Client" icon={Layout} level={95} />
+            <SkillCard title="Cybersécurité" icon={Shield} />
+            <SkillCard title="Réseaux" icon={Server} />
+            <SkillCard title="Admin Sys" icon={Terminal} />
+            <SkillCard title="Virtualisation" icon={Database} />
+            <SkillCard title="Service Client" icon={Layout} />
           </div>
           
           <motion.div
