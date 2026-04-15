@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Code, Terminal, Database, Server, ExternalLink } from 'lucide-react';
+import { Code, Terminal, Database, Server, ExternalLink, Github } from 'lucide-react';
 import CredentialsModal from './CredentialsModal';
 
 const fadeInUp = {
@@ -104,6 +104,44 @@ export default function Projects() {
               </motion.div>
             );
           })}
+        </motion.div>
+
+        {/* Encart GitHub */}
+        <motion.div
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          className="mt-12"
+        >
+          <a
+            href="https://github.com/nicoflip"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="glass-card rounded-3xl p-8 md:p-10 flex flex-col md:flex-row items-center justify-between group relative overflow-hidden block"
+          >
+            <div className="absolute top-0 right-0 w-64 h-64 bg-gray-600/10 rounded-full blur-3xl -mr-32 -mt-32 transition-colors group-hover:bg-gray-500/20" />
+            
+            <div className="flex flex-col md:flex-row items-center md:items-start text-center md:text-left gap-6 mb-8 md:mb-0 relative z-10">
+              <div className="w-16 h-16 bg-gray-800/80 border border-gray-700/50 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 flex-shrink-0">
+                <Github className="w-8 h-8 text-white/80 group-hover:text-white transition-colors" />
+              </div>
+              <div>
+                <h3 className="text-2xl md:text-3xl font-bold text-white mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-400 transition-all">
+                  Explorer plus de projets sur GitHub
+                </h3>
+                <p className="text-gray-400 font-light max-w-xl">
+                  Découvrez l'ensemble de mes réalisations, mes contributions open-source et mes différentes expérimentations techniques.
+                </p>
+              </div>
+            </div>
+            
+            <div className="relative z-10 flex-shrink-0 w-full md:w-auto">
+              <div className="flex items-center justify-center gap-2 px-6 py-3 bg-white/5 border border-white/10 group-hover:bg-white/10 text-white rounded-full font-medium transition-all group-hover:border-white/20">
+                Visiter github.com/nicoflip <ExternalLink className="w-4 h-4 ml-1" />
+              </div>
+            </div>
+          </a>
         </motion.div>
       </div>
       <CredentialsModal isOpen={!!modalLink} onClose={() => setModalLink(null)} link={modalLink} />
